@@ -1,0 +1,8 @@
+{
+    "shop_domain": "shop.com",
+    "target_domain": "our.com",
+    "another_domains": ["their1.com", "their2.com"],
+    "finish_url": "https://shop.com/checkout",
+    "logs": [],
+    "result": []
+}

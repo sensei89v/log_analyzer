@@ -7,6 +7,7 @@ def _is_part_domain(original_domain: str, checked_domain: str):
 
 
 class Log:
+    # Todo: add hint fot datetime
     def __init__(self, client_id: str, location: str, referrer: str, datetime):
         self.client_id = client_id
         self.location = location
