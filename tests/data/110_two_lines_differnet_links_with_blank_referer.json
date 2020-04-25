@@ -1,0 +1,154 @@
+{
+    "description": "Два пользователя покупают параллельно по разным ссылкам. После покупки, происходит смена перехода по ссылкам",
+    "shop_domain": "shop.com",
+    "target_domain": "our.com",
+    "another_domains": ["their1.com", "their2.com"],
+    "finish_url": "https://shop.com/checkout",
+    "logs": [
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/",
+            "referer": "https://referal.our.com/?ref=0xc0ffee",
+            "datetime": "2018-05-23T19:00:13.286000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/products/id?=10",
+            "referer": "https://shop.com/",
+            "datetime": "2018-05-23T19:01:20.119000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/",
+            "referer": "https://referal.our.com/?ref=1xc0ffee",
+            "datetime": "2018-05-23T19:02:13.286000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/products/id?=25",
+            "referer": "https://shop.com/products/id?=10",
+            "datetime": "2018-05-23T19:03:20.119000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/products/id?=11",
+            "referer": "https://shop.com/",
+            "datetime": "2018-05-23T19:04:20.119000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/products/id?=56",
+            "referer": "https://shop.com/products/id?=11",
+            "datetime": "2018-05-23T19:05:20.119000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/cart",
+            "referer": "https://shop.com/products/id?=25",
+            "datetime": "2018-05-23T19:06:13.123000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/checkout",
+            "referer": "https://shop.com/cart",
+            "datetime": "2018-05-23T19:07:59.224000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/cart",
+            "referer": "https://shop.com/products/id?=56",
+            "datetime": "2018-05-23T19:08:13.123000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/cart",
+            "referer": "",
+            "datetime": "2018-05-23T19:09:13.123000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/checkout",
+            "referer": "https://shop.com/cart",
+            "datetime": "2018-05-23T19:10:59.224000"
+        },
+
+
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/",
+            "referer": "https://referal.our.com/?ref=1xc0ffee",
+            "datetime": "2018-05-23T19:20:13.286000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/products/id?=10",
+            "referer": "https://shop.com/",
+            "datetime": "2018-05-23T19:21:20.119000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/",
+            "referer": "https://referal.our.com/?ref=0xc0ffee",
+            "datetime": "2018-05-23T19:22:13.286000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/products/id?=25",
+            "referer": "https://shop.com/products/id?=10",
+            "datetime": "2018-05-23T19:23:20.119000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/products/id?=11",
+            "referer": "https://shop.com/",
+            "datetime": "2018-05-23T19:24:20.119000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/products/id?=56",
+            "referer": "https://shop.com/products/id?=11",
+            "datetime": "2018-05-23T19:25:20.119000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/cart",
+            "referer": "https://shop.com/products/id?=25",
+            "datetime": "2018-05-23T19:26:13.123000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/checkout",
+            "referer": "https://shop.com/cart",
+            "datetime": "2018-05-23T19:27:59.224000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/cart",
+            "referer": "https://shop.com/products/id?=56",
+            "datetime": "2018-05-23T19:28:13.123000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/cart",
+            "referer": "",
+            "datetime": "2018-05-23T19:29:13.123000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/checkout",
+            "referer": "https://shop.com/cart",
+            "datetime": "2018-05-23T19:30:59.224000"
+        }
+
+    ],
+    "result": [
+        {
+            "url": "https://referal.our.com/?ref=0xc0ffee",
+            "count": 2
+        },
+        {
+            "url": "https://referal.our.com/?ref=1xc0ffee",
+            "count": 2
+        }
+    ]
+}
