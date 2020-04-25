@@ -1,12 +1,9 @@
-from stat_data import StatItem
+from src.stat_data import StatItem
 
 
 def build_statistics(data, shop_domain, finish_url, target_domain, another_domains):
     current_payments = {} # "user_id" -> "url"
     current_stat = {} # "url" -> StatItem
-
-    import pdb
-    pdb.set_trace()
 
     for item in data:
         if not item.check_location_domain(shop_domain):

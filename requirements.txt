@@ -1,1 +1,8 @@
 marshmallow==3.5.0
+
+# linters
+flake8==3.7.9
+mypy==0.770
+
+# tests
+pytest==5.4.1

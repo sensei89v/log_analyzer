@@ -1,5 +1,5 @@
-from loader import FileLoader
-from processor import build_statistics
+from src.loader import FileLoader
+from src.processor import build_statistics
 import sys
 import argparse
 

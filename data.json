@@ -33,5 +33,12 @@
     "document.location": "https://shop.com/checkout",
     "document.referer": "https://shop.com/cart",
     "date": "2018-05-23T19:05:59.224000Z"
+},
+{
+    "client_id": "user7",
+    "User-Agent": "Chrome 65",
+    "document.location": "https://shop.com/checkout",
+    "document.referer": "https://shop.com/cart",
+    "date": "2018-05-23T19:06:59.224000Z"
 }
 ]

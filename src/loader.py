@@ -1,7 +1,8 @@
 import abc
 import json
-import schemas
-import log
+
+from src.schemas import LogSchema
+from src.log import Log
 
 class Loader:
     def load(self):
@@ -19,15 +20,15 @@ class FileLoader(Loader):
 
     def load(self):
         data = self._load()
-        schema = schemas.LogSchema()
+        schema = LogSchema()
         result = []
 
         for item in data:
             value = schema.load(item)
-            log_tem = log.Log(client_id=value['client_id'],
-                              location=value['location'],
-                              referrer=value['referrer'],
-                              datetime=value['date'])
+            log_tem = Log(client_id=value['client_id'],
+                          location=value['location'],
+                          referrer=value['referrer'],
+                          datetime=value['date'])
 
             result.append(log_tem)
 
