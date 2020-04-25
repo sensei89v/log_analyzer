@@ -9,3 +9,7 @@ class StatItem:
 
     def __str__(self):
         return f"url: {self.url}, bill_count: {self.bill_count}"
+
+    def __eq__(self, another):
+        # Need to test
+        return self.url == another.url and self.bill_count == another.bill_count

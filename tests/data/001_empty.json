@@ -1,4 +1,5 @@
 {
+    "description": "Пустой тест",
     "shop_domain": "shop.com",
     "target_domain": "our.com",
     "another_domains": ["their1.com", "their2.com"],

@@ -8,14 +8,14 @@ def _is_part_domain(original_domain: str, checked_domain: str):
 
 class Log:
     # Todo: add hint fot datetime
-    def __init__(self, client_id: str, location: str, referrer: str, datetime):
+    def __init__(self, client_id: str, location: str, referer: str, datetime):
         self.client_id = client_id
         self.location = location
-        self.referrer = referrer
+        self.referer = referer
         self.datetime = datetime
 
     def __str__(self):
-        return f"client_id: {self.client_id}, location: {self.location}, referrer: {self.referrer}, datetime: {self.datetime}"
+        return f"client_id: {self.client_id}, location: {self.location}, referer: {self.referer}, datetime: {self.datetime}"
 
     def check_location_domain(self, domain: str):
         parsed = urlparse(self.location)
@@ -23,7 +23,7 @@ class Log:
         return _is_part_domain(path, domain)
 
     def check_referral_domains(self, domains: Iterable[str]):
-        parsed = urlparse(self.referrer)
+        parsed = urlparse(self.referer)
         path = parsed.netloc
 
         for domain_item in domains:

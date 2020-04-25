@@ -22,7 +22,7 @@ class FileLoader:
             value = schema.load(item)
             log_tem = Log(client_id=value['client_id'],
                           location=value['location'],
-                          referrer=value['referrer'],
+                          referer=value['referer'],
                           datetime=value['date'])
 
             result.append(log_tem)

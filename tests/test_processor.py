@@ -9,10 +9,14 @@ from src.log import Log
 
 
 filenames = []
-DATA_DIR = 'tests/data'
+DATA_DIR = './tests/data'
+
 
 for current, dirs, files in os.walk(DATA_DIR):
     filenames += map(lambda x: os.path.join(DATA_DIR, x), files)
+    break
+
+filenames = sorted(filenames)
 
 
 @pytest.mark.parametrize("filename", filenames)
@@ -37,8 +41,8 @@ def test_processor(filename):
     for result_item in input_data['logs']:
         logs.append(Log(client_id=result_item['client_id'],
                         location=result_item['location'],
-                        referrer=result_item['referrer'],
-                        datetime=datetime.strftime(result_item['datetime'])))
+                        referer=result_item['referer'],
+                        datetime=datetime.strptime(result_item['datetime'], '%Y-%m-%dT%H:%M:%S.%f')))
 
     result = build_statistics(data=logs,
                               shop_domain=input_data['shop_domain'],

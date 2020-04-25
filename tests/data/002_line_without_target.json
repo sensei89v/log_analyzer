@@ -1,0 +1,40 @@
+{
+    "description": "Есть один органический переход",
+    "shop_domain": "shop.com",
+    "target_domain": "our.com",
+    "another_domains": ["their1.com", "their2.com"],
+    "finish_url": "https://shop.com/checkout",
+    "logs": [
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/",
+            "referer": "https://referal.ours.com/?ref=0xc0ffee",
+            "datetime": "2018-05-23T18:59:13.286000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/products/id?=10",
+            "referer": "https://shop.com/",
+            "datetime": "2018-05-23T18:59:20.119000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/products/id?=25",
+            "referer": "https://shop.com/products/id?=10",
+            "datetime": "2018-05-23T19:04:20.119000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/cart",
+            "referer": "https://shop.com/products/id?=25",
+            "datetime": "2018-05-23T19:05:13.123000"
+        },
+        {
+            "client_id": "user7",
+            "location": "https://shop.com/checkout",
+            "referer": "https://shop.com/cart",
+            "datetime": "2018-05-23T19:05:59.224000"
+        }
+    ],
+    "result": []
+}
