@@ -12,7 +12,6 @@ class Log:
         self.referrer = referrer
         self.datetime = datetime
 
-    # datetime =
     def __str__(self):
         return f"client_id: {self.client_id}, location: {self.location}, referrer: {self.referrer}, datetime: {self.datetime}"
 
@@ -58,4 +57,3 @@ class Log:
         finish_query = sorted(finish_url_parsed.query.split('&'))
 
         return location_query == finish_query
-        # TODO: сделать схемонезависимой штукой
