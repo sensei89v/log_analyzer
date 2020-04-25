@@ -1,6 +1,6 @@
 
 class StatItem:
-    def __init__(self, url):
+    def __init__(self, url: str):
         self.url = url
         self.bill_count = 0
 

@@ -1,16 +1,11 @@
-import abc
 import json
 
 from src.schemas import LogSchema
 from src.log import Log
 
-class Loader:
-    def load(self):
-        pass
 
-
-class FileLoader(Loader):
-    def __init__(self, filename):
+class FileLoader:
+    def __init__(self, filename: str):
         self.filename = filename
 
     def _load(self):

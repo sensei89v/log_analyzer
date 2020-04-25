@@ -1,9 +1,10 @@
+from typing import Iterable, Dict
 from src.stat_data import StatItem
 
 
-def build_statistics(data, shop_domain, finish_url, target_domain, another_domains):
-    current_payments = {} # "user_id" -> "url"
-    current_stat = {} # "url" -> StatItem
+def build_statistics(data, shop_domain: str, finish_url: str, target_domain: str, another_domains: Iterable[str]):
+    current_payments: Dict[str, str] = {}      # "user_id" -> "url"
+    current_stat: Dict[str, StatItem] = {}     # "url" -> StatItem
 
     for item in data:
         if not item.check_location_domain(shop_domain):

@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, pprint
+from marshmallow import Schema, fields
 
 
 # TODO: add обязательность
@@ -8,5 +8,3 @@ class LogSchema(Schema):
     location = fields.Str(data_key="document.location")
     referrer = fields.Str(data_key="document.referer")
     date = fields.DateTime()
-
-
