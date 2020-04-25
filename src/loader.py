@@ -23,7 +23,7 @@ class FileLoader:
             log_tem = Log(client_id=value['client_id'],
                           location=value['location'],
                           referer=value['referer'],
-                          datetime=value['date'])
+                          request_datetime=value['date'])
 
             result.append(log_tem)
 

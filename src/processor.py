@@ -4,7 +4,6 @@ from src.stat_data import StatItem
 from src.log import Log
 
 
-# TODO: check input data
 def build_statistics(data: Iterable[Log],
                      shop_domain: str,
                      finish_url: str,

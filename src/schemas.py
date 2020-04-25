@@ -1,10 +1,9 @@
 from marshmallow import Schema, fields
 
 
-# TODO: add обязательность
 class LogSchema(Schema):
-    client_id = fields.Str()
-    user_agent = fields.Str(data_key="User-Agent")
-    location = fields.Str(data_key="document.location")
-    referer = fields.Str(data_key="document.referer")
-    date = fields.DateTime()
+    client_id = fields.Str(required=True)
+    user_agent = fields.Str(data_key="User-Agent", required=True)
+    location = fields.Str(data_key="document.location", required=True)
+    referer = fields.Str(data_key="document.referer", required=True)
+    date = fields.DateTime(required=True)

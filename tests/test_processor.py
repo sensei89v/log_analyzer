@@ -42,7 +42,7 @@ def test_processor(filename):
         logs.append(Log(client_id=result_item['client_id'],
                         location=result_item['location'],
                         referer=result_item['referer'],
-                        datetime=datetime.strptime(result_item['datetime'], '%Y-%m-%dT%H:%M:%S.%f')))
+                        request_datetime=datetime.strptime(result_item['datetime'], '%Y-%m-%dT%H:%M:%S.%f')))
 
     result = build_statistics(data=logs,
                               shop_domain=input_data['shop_domain'],

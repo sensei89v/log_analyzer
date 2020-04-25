@@ -26,6 +26,6 @@ if __name__ == "__main__":
     loader = FileLoader(args.filename)
     data = loader.load()
 
-    data = sorted(data, key=lambda x: x.datetime)
+    data = sorted(data, key=lambda x: x.request_datetime)
     stat = build_statistics(data, args.shop_domain, args.finish_url, args.our_domain, args.another_domains)
     print("\n".join(map(str, stat)))

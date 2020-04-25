@@ -1,4 +1,5 @@
 from typing import Iterable
+import datetime
 from urllib.parse import urlparse
 
 
@@ -8,11 +9,11 @@ def _is_part_domain(original_domain: str, checked_domain: str):
 
 class Log:
     # Todo: add hint fot datetime
-    def __init__(self, client_id: str, location: str, referer: str, datetime):
+    def __init__(self, client_id: str, location: str, referer: str, request_datetime: datetime.datetime):
         self.client_id = client_id
         self.location = location
         self.referer = referer
-        self.datetime = datetime
+        self.request_datetime = request_datetime
 
     def __str__(self):
         return f"client_id: {self.client_id}, location: {self.location}, referer: {self.referer}, datetime: {self.datetime}"
