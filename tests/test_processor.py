@@ -38,6 +38,7 @@ def test_processor(filename):
 
     # build input data
     logs = []
+
     for result_item in input_data['logs']:
         logs.append(Log(client_id=result_item['client_id'],
                         location=result_item['location'],
