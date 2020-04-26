@@ -22,7 +22,7 @@ class LogSchema(Schema):
 
         try:
             temp_schema.load({'referer': value})
-        except Exception as e:
+        except Exception:
             item['document.referer'] = ""
 
         return item

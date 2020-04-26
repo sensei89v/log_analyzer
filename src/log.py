@@ -2,9 +2,7 @@ from typing import Iterable
 import datetime
 from urllib.parse import urlparse
 
-
-def _is_part_domain(original_domain: str, checked_domain: str):
-    return original_domain == checked_domain or original_domain.endswith("." + checked_domain)
+from src.utils import is_domain_part_of_another
 
 
 class Log:
@@ -21,14 +19,17 @@ class Log:
     def check_location_domain(self, domain: str):
         parsed = urlparse(self.location)
         path = parsed.netloc
-        return _is_part_domain(path, domain)
+        return is_domain_part_of_another(domain, path)
 
     def check_referral_domains(self, domains: Iterable[str]):
+        if not self.referer:
+            return False
+
         parsed = urlparse(self.referer)
         path = parsed.netloc
 
         for domain_item in domains:
-            if _is_part_domain(path, domain_item):
+            if is_domain_part_of_another(domain_item, path):
                 return True
 
         return False
