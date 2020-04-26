@@ -1,0 +1,161 @@
+{
+    "description": "Сложное взаимодейсвие трех пользователей 4",
+    "shop_domain": "shop.com",
+    "target_domain": "ours.com",
+    "another_domains": ["their1.com", "their2.com"],
+    "finish_url": "https://shop.com/checkout",
+    "logs": [
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/bla-bla",
+            "referer": "https://shop.com/health",
+            "datetime": "2018-05-23T19:00:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/top",
+            "referer": "https://shop.com/three",
+            "datetime": "2018-05-23T19:01:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/top",
+            "referer": "https://ours.com/?ref=1",
+            "datetime": "2018-05-23T19:02:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/catalog",
+            "referer": "https://shop.com/top",
+            "datetime": "2018-05-23T19:03:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/?id=54",
+            "referer": "https://shop.com/top",
+            "datetime": "2018-05-23T19:04:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/?id=53",
+            "referer": "https://shop.com/?id=54",
+            "datetime": "2018-05-23T19:05:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/",
+            "referer": "https://ours.com/?ref=2",
+            "datetime": "2018-05-23T19:06:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/checkout",
+            "referer": "https://shop.com/?id=54",
+            "datetime": "2018-05-23T19:07:13.286000"
+        },
+        {
+            "client_id": "user3",
+            "location": "https://shop.com/table",
+            "referer": "https://shop.com/cart",
+            "datetime": "2018-05-23T19:08:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/snob",
+            "referer": "https://shop.com/",
+            "datetime": "2018-05-23T19:09:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/loop",
+            "referer": "https://ours.com/?ref=3",
+            "datetime": "2018-05-23T19:10:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "http://shop.com/bez",
+            "referer": "https://shop.com/?id=53",
+            "datetime": "2018-05-23T19:11:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/gast",
+            "referer": "https://yahoo.com/?ref=32",
+            "datetime": "2018-05-23T19:12:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/id/?fd=21",
+            "referer": "https://shop.com/snob",
+            "datetime": "2018-05-23T19:13:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/?id=123",
+            "referer": "https://shop.com/loop",
+            "datetime": "2018-05-23T19:14:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/checkout",
+            "referer": "http://shop.com/bez",
+            "datetime": "2018-05-23T19:15:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/gast/id",
+            "referer": "https://shop.com/gast",
+            "datetime": "2018-05-23T19:16:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/checkout",
+            "referer": "https://shop.com/?id=123",
+            "datetime": "2018-05-23T19:17:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/id/?fd=22",
+            "referer": "https://shop.com/id/?fd=21",
+            "datetime": "2018-05-23T19:18:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/snoob",
+            "referer": "https://google.com/",
+            "datetime": "2018-05-23T19:19:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/checkout",
+            "referer": "https://shop.com/snoob",
+            "datetime": "2018-05-23T19:20:13.286000"
+        },
+        {
+            "client_id": "user1",
+            "location": "https://shop.com/das?ddsds=21",
+            "referer": "https://shop.com/checkout",
+            "datetime": "2018-05-23T19:21:13.286000"
+        },
+        {
+            "client_id": "user2",
+            "location": "https://shop.com/id/?fd=bool",
+            "referer": "https://shop.com/id/?fd=22",
+            "datetime": "2018-05-23T19:22:13.286000"
+        }
+    ],
+    "result": [
+        {
+            "url": "https://ours.com/?ref=1",
+            "count": 1
+        },
+        {
+            "url": "https://ours.com/?ref=2",
+            "count": 1
+        },
+        {
+            "url": "https://ours.com/?ref=3",
+            "count": 2
+        }
+    ]
+}

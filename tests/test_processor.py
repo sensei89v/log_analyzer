@@ -58,7 +58,6 @@ def test_processor(filename):
     result = sorted(result, key=lambda x: x.url)
     assert result == available
 
-
 def test_incorrect_sorted_data():
     logs = [
         Log(client_id="user1", location="http://shop.ru", referer="http://shop.ru", request_datetime=datetime(2018, 1, 2, 20, 3, 4)),

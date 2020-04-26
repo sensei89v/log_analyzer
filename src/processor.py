@@ -56,19 +56,8 @@ def build_statistics(data: Iterable[Log],
 
         current_datetime = item.request_datetime
 
-        # Check domain
-        if not item.check_location_domain(shop_domain):
-            continue
-
-        # try analyze item
-        if item.check_referral_domains(another_domains):
-            # Transmition from competitors
-            if item.client_id in current_payments:
-                del current_payments[item.client_id]
-        elif item.check_referral_domains((target_domain, )):
-            # Transmition from our server
-            current_payments[item.client_id] = item.referer
-        elif item.is_finish_url(finish_url):
+        # May be PURCHASE?
+        if item.is_finish_url(finish_url):
             # PURCHASE!!!!!
             if item.client_id in current_payments:
                 # Transmition from our server
@@ -83,6 +72,22 @@ def build_statistics(data: Iterable[Log],
             else:
                 # Transmition from not our server
                 pass
+
+            continue
+
+        # Check domain
+        if not item.check_location_domain(shop_domain):
+            # Unknown domain. Ignore it
+            continue
+
+        # try analyze item
+        if item.check_referral_domains(another_domains):
+            # Transmition from competitors
+            if item.client_id in current_payments:
+                del current_payments[item.client_id]
+        elif item.check_referral_domains((target_domain, )):
+            # Transmition from our server
+            current_payments[item.client_id] = item.referer
         else:
             # internal or correct external transmits
             pass

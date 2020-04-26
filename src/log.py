@@ -6,7 +6,6 @@ from src.utils import is_domain_part_of_another
 
 
 class Log:
-    # Todo: add hint fot datetime
     def __init__(self, client_id: str, location: str, referer: str, request_datetime: datetime.datetime):
         self.client_id = client_id
         self.location = location
