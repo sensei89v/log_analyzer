@@ -4,7 +4,7 @@ import marshmallow
 
 from src.schemas import LogSchema
 
-
+# TODO. Add check fix referer
 @pytest.mark.parametrize("input_data", [{
                                           'client_id': 'user_id',
                                           'User-Agent': 'Firefox 80',
@@ -15,8 +15,15 @@ from src.schemas import LogSchema
                                         {
                                           'client_id': '',
                                           'User-Agent': '',
-                                          'document.location': '',
+                                          'document.location': 'http://www.google.com/ref?data=1',
                                           'document.referer': '',
+                                          'date': '2020-12-01T02:03:50.31232',
+                                        },
+                                        {
+                                          'client_id': '',
+                                          'User-Agent': '',
+                                          'document.location': 'http://www.google.com/ref?data=1',
+                                          'document.referer': 'some shit',
                                           'date': '2020-12-01T02:03:50.31232',
                                         }])
 def test_good_schema(input_data):

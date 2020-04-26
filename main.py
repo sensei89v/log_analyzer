@@ -18,12 +18,15 @@ if __name__ == "__main__":
                         default=["theirs1.com", "theirs2.com"], help='another domains')
     parser.add_argument('--finish_url', nargs='?', required=False,
                         default="https://shop.com/checkout",
-                        help='filename of log file')            # https://shop.com/checkout
+                        help='filename of log file')
+    parser.add_argument('--ignore-errors', required=False,
+                        default=False, action="store_true",
+                        help='ignore validation errors')
 
     args = parser.parse_args()
     # TODO: check domains and url
 
-    loader = FileLoader(args.filename)
+    loader = FileLoader(args.filename, args.ignore_errors)
     data = loader.load()
 
     data = sorted(data, key=lambda x: x.request_datetime)
