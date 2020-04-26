@@ -60,23 +60,31 @@ def build_statistics(data: Iterable[Log],
         if not item.check_location_domain(shop_domain):
             continue
 
+        # try analyze item
         if item.check_referral_domains(another_domains):
+            # Transmition from competitors
             if item.client_id in current_payments:
                 del current_payments[item.client_id]
         elif item.check_referral_domains((target_domain, )):
+            # Transmition from our server
             current_payments[item.client_id] = item.referer
-        elif item.is_finish_url(finish_url) and item.client_id in current_payments:
-            transition_url = current_payments[item.client_id]
+        elif item.is_finish_url(finish_url):
+            # PURCHASE!!!!!
+            if item.client_id in current_payments:
+                # Transmition from our server
+                transition_url = current_payments[item.client_id]
+                stat_item = current_stat.get(transition_url)
 
-            stat_item = current_stat.get(transition_url)
+                if stat_item is None:
+                    stat_item = StatItem(transition_url)
+                    current_stat[transition_url] = stat_item
 
-            if stat_item is None:
-                stat_item = StatItem(transition_url)
-                current_stat[transition_url] = stat_item
-
-            stat_item.inc_bill_count()
+                stat_item.inc_bill_count()
+            else:
+                # Transmition from not our server
+                pass
         else:
-            # внутренние переходы, или переходы из внешних источников
+            # internal or correct external transmits
             pass
 
     return current_stat.values()

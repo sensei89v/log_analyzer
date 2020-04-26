@@ -5,6 +5,10 @@ from src.schemas import LogSchema
 from src.log import Log
 
 
+class ReadError(Exception):
+    pass
+
+
 class FileLoader:
     def __init__(self, filename: str, ignore_error: bool):
         self.filename = filename
@@ -16,10 +20,14 @@ class FileLoader:
             return data
 
     def load(self):
-        data = self._load()
+        try:
+            data = self._load()
+        except Exception:
+            raise ReadError(f"Cann't read json file {self.filename}")
+
         schema = LogSchema()
         result = []
-
+        # Todo: добавить проверку что это список объектов
         for item in data:
             try:
                 value = schema.load(item)

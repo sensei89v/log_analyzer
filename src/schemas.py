@@ -14,6 +14,7 @@ class LogSchema(Schema):
 
     @pre_load
     def fix_referer(self, item, many, **kwargs):
+        # Change incorrect referer to ""
         if 'document.referer' not in item:
             return item
 
